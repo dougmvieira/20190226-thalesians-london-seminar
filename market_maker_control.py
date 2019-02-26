@@ -106,7 +106,7 @@ rates_skew.columns = ['{:.1f}'.format(s) for s in rates_skew.columns]
 rates_skew['Current'] = rates_skew['0.0']
 bokeh_rates_skew = bokeh.models.ColumnDataSource(rates_skew)
 
-p1 = bokeh.plotting.figure(plot_height=200, y_axis_label='Price',
+p1 = bokeh.plotting.figure(plot_height=300, y_axis_label='Price',
                            y_range=(prices.min().min(), prices.max().max()),
                            x_range=(0, end_time))
 p1.line(x='Time', y='0.0', color='grey', source=bokeh_prices)
@@ -115,13 +115,13 @@ p1_bid = p1.line(x='Time', y='Ask', color='red', source=bokeh_prices)
 p1.circle(x='Time', y='Bid', color='black', source=bokeh_trades)
 p1.circle(x='Time', y='Ask', color='black', source=bokeh_trades)
 
-p3 = bokeh.plotting.figure(plot_height=200, y_axis_label='Inventory',
+p3 = bokeh.plotting.figure(plot_height=300, y_axis_label='Inventory',
                            y_range=(inventory_skew.min().min(),
                                     inventory_skew.max().max()),
                            x_range=(0, end_time))
 p3.line(x='Time', y='Current', source=bokeh_inventory_skew)
 
-p2 = bokeh.plotting.figure(plot_height=200, y_axis_label='Order rate',
+p2 = bokeh.plotting.figure(plot_height=300, y_axis_label='Order rate',
                            x_range=(delta_grid[0], delta_grid[-1]))
 p2.line(x='delta', y='Ask', color='red', source=rates)
 p2.line(x='delta', y='Bid', color='blue', source=rates)
@@ -166,7 +166,7 @@ rates_spread.columns = ['{:.1f}'.format(s) for s in rates_spread.columns]
 rates_spread['Current'] = rates_spread['6.0']
 bokeh_rates_spread = bokeh.models.ColumnDataSource(rates_spread)
 
-p1 = bokeh.plotting.figure(plot_height=200, y_axis_label='Price',
+p1 = bokeh.plotting.figure(plot_height=300, y_axis_label='Price',
                            y_range=(prices.min().min(), prices.max().max()),
                            x_range=(0, end_time))
 p1.line(x='Time', y='0.0', color='grey', source=bokeh_prices)
@@ -175,13 +175,13 @@ p1_bid = p1.line(x='Time', y='Ask', color='red', source=bokeh_prices)
 p1.circle(x='Time', y='Bid', color='black', source=bokeh_trades)
 p1.circle(x='Time', y='Ask', color='black', source=bokeh_trades)
 
-p3 = bokeh.plotting.figure(plot_height=200, y_axis_label='Inventory',
+p3 = bokeh.plotting.figure(plot_height=300, y_axis_label='Inventory',
                            y_range=(inventory_spread.min().min(),
                                     inventory_spread.max().max()),
                            x_range=(0, end_time))
 p3.line(x='Time', y='Current', source=bokeh_inventory_spread)
 
-p2 = bokeh.plotting.figure(plot_height=200, y_axis_label='Order rate',
+p2 = bokeh.plotting.figure(plot_height=300, y_axis_label='Order rate',
                            x_range=(delta_grid[0], delta_grid[-1]))
 p2.line(x='delta', y='Ask', color='red', source=rates)
 p2.line(x='delta', y='Bid', color='blue', source=rates)
