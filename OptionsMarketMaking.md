@@ -53,7 +53,7 @@ $$\begin{align}
 
 $$ dX_t = \mu_t dt + \sigma_t dW_t, $$
 
-$$ \text{then } \frac{X_t - \tilde X_t}{\sqrt t} \xrightarrow{L^2} 0, $$
+$$ \text{then } \frac{X_t - \tilde X_t}{\sqrt t} \xrightarrow{L^2} 0, \text{ as } t\to 0,$$
 
 $$ \text{where } d\tilde X_t = \sigma_0 dW_t. $$
 
@@ -128,13 +128,14 @@ $$ \Lambda(\delta) = Ae^{-k\delta} $$
 
 - Optimal spread is constant
 
-$$ S^a_t - S^b_t = \frac{2}{\gamma} \log\left(1 + \frac{\gamma}{k}\right)
+$$ S^\mathrm{ask}_t - S^\mathrm{bid}_t
+= \frac{2}{\gamma} \log\left(1 + \frac{\gamma}{k}\right)
 + \sqrt{\frac{\sigma^2\gamma}{2kA}
   \left(1 + \frac{\gamma}{k}\right)^{1+\frac{k}{\gamma}}} $$
 
 - Optimal skew is linear
 
-$$ \frac{S^a_t + S^b_t}{2} - S_t
+$$ \frac{S^\mathrm{ask}_t + S^\mathrm{bid}}{2} - S_t
 = -q_{t-}\sqrt{\frac{\sigma^2\gamma}{2kA}
   \left(1 + \frac{\gamma}{k}\right)^{1+\frac{k}{\gamma}}} $$
 
@@ -151,13 +152,13 @@ $$ \frac{S^a_t + S^b_t}{2} - S_t
 
 - Optimal spread is again constant
 
-$$ S^{i,a}_t - S^{i,b}_t = \frac{2}{\gamma\kappa^i}
+$$ S^{i,\mathrm{ask}}_t - S^{i,\mathrm{bid}}_t = \frac{2}{\gamma\kappa^i}
   \log\left(1+\frac{\gamma\kappa^i}{k^{i}}\right)
   + \sqrt{\frac{\gamma}{2}}\Gamma^{ii}\kappa^i $$
 
 - Optimal skew is again linear
 
-$$ \frac{S^{i,a}_t + S^{i,b}_t}{2} - S^i_t
+$$ \frac{S^{i,\mathrm{ask}}_t + S^{i,\mathrm{bid}}_t}{2} - S^i_t
 = -\sqrt{\frac{\gamma}{2}}\Gamma^{i\bullet} q_{t-}, $$
 
 ## 
@@ -179,7 +180,7 @@ dV_t & = \alpha_t dt + \nu_t dZ_t, \quad
 d[W, Z]_t = \rho dt
 \end{align*} $$
 
-- The small time asymptotics gives the covariance matrix
+- The small time asymptotics gives
 
 $$ \Sigma =
 \begin{bmatrix} \sigma_0\Delta_0 & \nu_0\mathcal{V}_0 \end{bmatrix}
@@ -198,8 +199,8 @@ $$ \Sigma =
 - Options market making model
   - Encompasses stochastic volatility
   - Tractable thanks to small time asymptotics
-  - Passive hedging
   - Multiple strikes and maturities
+  - Passive hedging
 
 ## Thank you!
 

@@ -67,8 +67,8 @@ trades = pd.concat([trades_bid, trades_ask], axis=1)
 
 inventory_skew_inc = pd.DataFrame(0, time_grid, columns=skews)
 for i in range(len(skews)):
-    inventory_skew_inc.loc[times_ask[deltas_ask[i]], skews[i]] -= 1
-    inventory_skew_inc.loc[times_bid[deltas_bid[-i-1]], skews[i]] += 1
+    inventory_skew_inc.loc[times_ask[deltas_ask[-i-1]], skews[i]] -= 1
+    inventory_skew_inc.loc[times_bid[deltas_bid[i]], skews[i]] += 1
 inventory_skew = inventory_skew_inc.cumsum()
 
 inventory_spread_inc = pd.DataFrame(0, time_grid, columns=spreads)
