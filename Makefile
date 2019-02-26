@@ -5,4 +5,4 @@ all: 20190226-thalesians-london-seminar.html
 	python3 market_maker_control.py
 
 20190226-thalesians-london-seminar.html: OptionsMarketMaking.md 20190226/skew_plot.html 20190226/spread_plot.html
-	pandoc -s -t revealjs -V theme=white -V revealjs-url=. --mathjax --toc --toc-depth=1 -o 20190226-thalesians-london-seminar.html OptionsMarketMaking.md
+	pandoc -s -c scrollable.css -t revealjs -V theme=white -V revealjs-url=. --mathjax --toc --toc-depth=1 -o 20190226-thalesians-london-seminar.html --bibliography References.bib OptionsMarketMaking.md
